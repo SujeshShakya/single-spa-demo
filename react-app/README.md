@@ -1,5 +1,3 @@
-
-
 ## Table of Contents
 
 - [Installation](#installation)
@@ -10,16 +8,15 @@
 
 ### Clone Repository and install packages
 
-
 ```sh
-$ git clone https://github.com/SujeshShakya/single_spa.git
+$ git clone https://github.com/SujeshShakya/single-spa-demo.git
 $ cd single_spa
 $ npm install
 $ cd react-app
 $ npm install
 ```
 
-### Running local 
+### Running local
 
 1. Start the root config application
 
@@ -27,15 +24,15 @@ $ npm install
    $ cd ..
    $ npm run start --port 9000
    ```
-2. Start the react-app  application
 
-    ```sh
-    $ cd react-app
-    $ npm run start 
-    ```
+2. Start the react-app application
 
-2. Application will be running in `http://localhost:9000`
+   ```sh
+   $ cd react-app
+   $ npm run start
+   ```
 
+3. Application will be running in `http://localhost:9000`
 
 ## Test
 
