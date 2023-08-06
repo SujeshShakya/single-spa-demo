@@ -1,3 +1,3 @@
 export interface IResetPassword {
-  password: string;
+  password: string | null;
 }

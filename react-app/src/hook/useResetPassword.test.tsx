@@ -23,4 +23,39 @@ describe("useResetPassword", () => {
     expect(result.current).toBeDefined();
     expect(result.current.errorState).toBeTruthy();
   });
+
+  it("should return error when password is blank", () =>{
+    const {result} = renderHook(()=> useResetPassword());
+    result.current.validatePassword("")
+    expect(result.current.errorState).toBe(true);
+    expect(result.current.errorMessage).toBe("This is required")
+  })
+
+  it("should return error when password is less than eight characters", () =>{
+    const {result} = renderHook(()=> useResetPassword());
+    result.current.validatePassword("333")
+    expect(result.current.errorState).toBe(true);
+    expect(result.current.errorMessage).toBe("Password must be at least 8 characters")
+  })
+
+  it("should return error when password is from than eight characters without one number and two special characters", () =>{
+    const {result} = renderHook(()=> useResetPassword());
+    result.current.validatePassword("333990989")
+    expect(result.current.errorState).toBe(true);
+    expect(result.current.errorMessage).toBe("Password must have  one number and two special characters")
+  })
+
+  it("should be successful if password is valid with more that eight character and one number two special characters", () =>{
+    const {result} = renderHook(()=> useResetPassword());
+    result.current.validatePassword("3339909##")
+    expect(result.current.errorState).toBe(false);
+    expect(result.current.errorMessage).toBe("")
+  })
+
+  it("should be successful if password is valid with more that fifteen characters", () =>{
+    const {result} = renderHook(()=> useResetPassword());
+    result.current.validatePassword("3339909erewrwrewrewrwerwerewr")
+    expect(result.current.errorState).toBe(false);
+    expect(result.current.errorMessage).toBe("")
+  })
 });

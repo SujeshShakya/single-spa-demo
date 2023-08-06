@@ -20,7 +20,6 @@ export const useResetPassword = () => {
       setErrorMessage("This is required");
     } else {
       if (password.length < 8) {
-        console.log("test");
         setErrorState(true);
         setErrorMessage("Password must be at least 8 characters");
       } else if (password.length <= 15) {
