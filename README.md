@@ -12,7 +12,7 @@
 
 
 ```sh
-$ git clone https://github.com/SujeshShakya/single_spa.git
+$ git clone https://github.com/SujeshShakya/single-spa-demo.git
 $ cd single_spa
 $ npm install
 $ cd react-app
